@@ -1,12 +1,14 @@
-import Form from "../components/Form"
+import Auth from "../components/Auth"
 import Quote from "../components/Quote"
 
 
 export default function Signup(){
     return (
         <div className="grid grid-cols-2" >
-                <Form />
+                <Auth />
+            <div className="invisible lg:visible">
                 <Quote />
+            </div>
         </div>
     )
 }
