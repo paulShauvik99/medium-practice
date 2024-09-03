@@ -17,10 +17,10 @@ export default function Blog(){
         <div>
             <Appbar />
             <FullBlog 
-                id={blog?.id}
-                title={blog?.title}
-                authorName={blog?.author.name}
-                content={blog?.content}
+                id={blog!.id}
+                title={blog!.title}
+                authorName={blog!.author.name}
+                content={blog!.content}
                 publishedDate="2nd January, 2016"
             />
         </div>
