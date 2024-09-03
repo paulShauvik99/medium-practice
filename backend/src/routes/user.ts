@@ -35,7 +35,7 @@ userRouter.post('/signup', async (c)=> {
         })
     
         const token = await sign({id : user.id , email : user.email } , c.env.SECRET_ACCESS_TOKEN , "HS512")
-        return c.json({ "token" : token})
+        return c.json({ "token" : `Bearer ${token}`})
         
     } catch (error) {
         console.log(error)
@@ -70,7 +70,7 @@ userRouter.post('/signin', async (c)=> {
         }else{
             const token = await sign({id : user.id , email : user.email } , c.env.SECRET_ACCESS_TOKEN , "HS512")
             c.status(200)
-            return c.json({ "token" : token, "status" : "User Successfully Signed In"})
+            return c.json({ "token" : `Bearer ${token}`, "status" : "User Successfully Signed In"})
         }
     } catch (error) {
         console.log(error)
